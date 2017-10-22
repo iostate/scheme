@@ -1,4 +1,5 @@
 ; DrRacket String API Exercise
+;Experimenting with the use of string comparisons, substring, display,
 
 ;Define a string
 (display "Defining a_string with contents \"okwhew\"...\n")
@@ -68,12 +69,6 @@
 (string-set! banana_string 0 #\b)
 ;Modify the last letter of banan2_string to an uppercase
 (string-set! banan2_string (- (string-length banan2_string) 1) #\A)
-;Compare whether the parameters are nondecreasing
+;Compare whether the parameters are lexographically nondecreasing
 (display (string<=? banana_string banan2_string))
 (display "\n")
-
-
-
-
-
-;Compare two strings to see whether one is decreasing lexographically and display a boolean
