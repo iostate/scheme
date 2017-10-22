@@ -39,13 +39,43 @@
 (display (substring a_string 0 (string-length a_string)))
 (display "\n")
 
+(display "Replace the first 5 letters in a_new_string with \"rooby\" \n")
+(define a_new_string (string #\w #\r #\e #\s #\t #\l #\e #\ #\w #\i #\t #\h #\ #\g #\i #\t #\ #\m #\e #\r #\g #\e))
+(string-copy! a_new_string 0 "rooby")
+(display a_new_string)
 
-;Find a character in a string
-(define (find-char c s)
-    (for/first ([x s]
-        [i (in-naturals)]
-                #:when (char=? c x))
-      i))
+(display "Replace the last 5 letters in a_new_string with \"rooby\" \n")
+(string-copy! a_new_string (- (string-length a_new_string) 5) "rooby")
+(display a_new_string)
 
-;Find the character in a string
-(find-char #\m "Hello man")
+(display "Append two strings together\n")
+(string-append "Critter" "Banana")
+(display "\n")
+
+(display "Create a string of characters\n")
+(display (string->list "CritterBanana"))
+(display "\n")
+
+
+(define banana_string (string #\B #\a #\n #\a #\n #\a))
+(define banan2_string (string #\b #\a #\n #\a #\n #\a))
+;Compare two strings to see whether one is increasing lexographically and display a boolean.
+;Returns true if the first parameeter is lexographically increasing compared to the second, otherwise, returns false.
+(display "Is banana_string increasing lexographically compared to banan2_string? \n")
+(display (string<? banana_string banan2_string))
+(display "\n")
+
+
+;Modify the first letter of banana_string to a lowercase b
+(string-set! banana_string 0 #\b)
+;Modify the last letter of banan2_string to an uppercase
+(string-set! banan2_string (- (string-length banan2_string) 1) #\A)
+;Compare whether the parameters are nondecreasing
+(display (string<=? banana_string banan2_string))
+(display "\n")
+
+
+
+
+
+;Compare two strings to see whether one is decreasing lexographically and display a boolean
